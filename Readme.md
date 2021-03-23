@@ -23,8 +23,11 @@
 --max 两帧之间的最大插值
 
 ## 对于min和max的值说明(一般情况下)
+
   小幅度运动: min=1 max=10 err=1
+  
   中幅度: min=10 max=30 err=2
+  
   大幅度: min=30 max=65 err=2
 
 
