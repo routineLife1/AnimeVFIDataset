@@ -24,8 +24,11 @@ if os.path.isdir(args.video):
     is_dir = True
 
 if not is_dir and os.path.exists(args.cache_dir):
-    shutil.rmtree(args.cache_dir)
-    os.mkdir(args.cache_dir)
+    try:
+        shutil.rmtree(args.cache_dir)
+        os.mkdir(args.cache_dir)
+    except:
+        print('')
 
 if not is_dir:
     cmd = 'ffmpeg -i "{}" -an -s {} -r {} -vf mpdecimate -vsync vfr -f image2 "{}"'.format(args.video,args.scale,args.fps,args.cache_dir) + r"/%09d.png"
@@ -49,7 +52,7 @@ if args.start == 0:
             maxc = tempcnt
     if maxc == 0:
         maxc = 1
-    cnt = maxc
+    cnt = maxc + 1
 else:
     cnt = args.start
 
@@ -82,6 +85,6 @@ while pos + 2 < tot:
 
 #等待最后一帧写入
 import time
-while not os.path.exists(os.path.join(args.dataset,str(cnt),'im2.png')):
+while not os.path.exists(os.path.join(args.dataset,str(cnt-1),'im2.png')):
     time.sleep(1)
 print('已找出{}组数据'.format(cnt))
