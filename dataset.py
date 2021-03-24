@@ -31,7 +31,7 @@ if not is_dir and os.path.exists(args.cache_dir):
         print('')
 
 if not is_dir:
-    cmd = 'ffmpeg -i "{}" -an -s {} -r {} -vf mpdecimate -vsync vfr -f image2 "{}"'.format(args.video,args.scale,args.fps,args.cache_dir) + r"/%09d.png"
+    cmd = 'ffmpeg -i "{}" -an -s {} -r {} -color_range tv -color_primaries bt709 -colorspace bt709 -vf mpdecimate -vsync vfr -f image2 "{}"'.format(args.video,args.scale,args.fps,args.cache_dir) + r"/%09d.png"
     os.system(cmd)
 else:
     args.cache_dir = args.video
@@ -43,6 +43,7 @@ frames = [
     for f in os.listdir(args.cache_dir)
 ]
 
+pre = 0
 #恢复dataset中的位置
 if args.start == 0:
     maxc = 0
@@ -53,6 +54,7 @@ if args.start == 0:
     if maxc == 0:
         maxc = 1
     cnt = maxc + 1
+    pre = cnt
 else:
     cnt = args.start
 
@@ -87,4 +89,4 @@ while pos + 2 < tot:
 import time
 while not os.path.exists(os.path.join(args.dataset,str(cnt-1),'im2.png')):
     time.sleep(1)
-print('已找出{}组数据'.format(cnt))
+print('已找出{}组数据'.format(cnt-pre))
