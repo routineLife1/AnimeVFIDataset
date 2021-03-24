@@ -2,13 +2,11 @@
 
 --video 视频/图片序列路径
 
---is_dir 表面输入的video路径为图片序列
-
 --cache_dir 用于存放视频帧的缓存路径
 
 --dataset 用于存放数据集的路径
 
---start 在dataset目录中的start位置继续创建目录
+--start 在dataset目录中的start位置继续创建目录(0为自动识别)
 
 --scale 对画面进行缩放（例:480x270）
 
