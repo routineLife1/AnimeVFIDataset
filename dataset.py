@@ -59,7 +59,7 @@ def clear_write_buffer(user_args, write_buffer):
         item = write_buffer.get()
         if item is None:
             break
-        cn = str(item[4])
+        cn = str(item[3])
         os.mkdir(os.path.join(args.dataset,cn))
         cv2.imencode('.png', item[0])[1].tofile(os.path.join(args.dataset,cn,'im0.png'))
         cv2.imencode('.png', item[1])[1].tofile(os.path.join(args.dataset,cn,'im1.png'))
