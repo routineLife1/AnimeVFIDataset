@@ -20,14 +20,13 @@ parser.add_argument('--min', dest='min', type=float, default=25)
 parser.add_argument('--max', dest='max', type=float, default=65)
 args = parser.parse_args()
 
-#spilt video into frames
 if not args.is_dir:
     cmd = 'ffmpeg -i "{}" -an -s {} -r {} -vf mpdecimate -vsync vfr -f image2 "{}"'.format(args.video,args.scale,args.fps,args.cache_dir) + r"/%09d.png"
     os.system(cmd)
 else:
     args.cache_dir = args.video
 
-#读取
+#批量读取到内存中（暴力解决IO瓶颈）
 frames = [
     cv2.imdecode(
         np.fromfile(os.path.join(args.cache_dir, f), dtype=np.uint8), 1
@@ -35,7 +34,6 @@ frames = [
     for f in os.listdir(args.cache_dir)
 ]
 
-#写入
 def clear_write_buffer(user_args, write_buffer):
     cnt = args.start
     while True:
@@ -62,7 +60,8 @@ while pos + 2 < tot:
     f = cv2.absdiff(frames[pos],frames[pos+2]).mean()
     if args.min <= f <= args.max and abs(l - r) <= args.err:
         write_buffer.put([frames[pos],frames[pos+1],frames[pos+2]])
-    pos += args.pos
+        pos += args.pos
+    pos += 1
 
 import time
 while not write_buffer.empty():
