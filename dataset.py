@@ -7,6 +7,7 @@ import _thread
 from queue import Queue, Empty
 
 parser = argparse.ArgumentParser(description='动漫补帧数据集制作')
+parser.add_argument('--mode',dest='mode',type=int,default=1,help='模式1/2')
 parser.add_argument('--video', dest='video', type=str, required=True,help='视频/文件夹路径')
 parser.add_argument('--cache_dir', dest='cache_dir', type=str, required=True,help='存放缓存的目录')
 parser.add_argument('--dataset', dest='dataset', type=str, required=True,help='存放数据的目录')
@@ -79,10 +80,17 @@ while pos + 2 < tot:
     l = cv2.absdiff(frames[pos],frames[pos+1]).mean()
     r = cv2.absdiff(frames[pos+1],frames[pos+2]).mean()
     f = cv2.absdiff(frames[pos],frames[pos+2]).mean()
-    if args.min <= f <= args.max and abs(l - r) <= args.err:
-        write_buffer.put([frames[pos],frames[pos+1],frames[pos+2],cnt])
-        cnt += 1
-        pos += args.pos - 1
+    mm = f / 2
+    if args.mode == 1:
+        if args.min <= f <= args.max and abs(l - r) <= args.err:
+            write_buffer.put([frames[pos],frames[pos+1],frames[pos+2],cnt])
+            cnt += 1
+            pos += args.pos - 1
+    else:
+        if args.min <= f <= args.max and abs(l - mm) <= args.err and abs(r - mm) <= args.err:
+            write_buffer.put([frames[pos],frames[pos+1],frames[pos+2],cnt])
+            cnt += 1
+            pos += args.pos - 1
     pos += 1
 
 #等待最后一帧写入
