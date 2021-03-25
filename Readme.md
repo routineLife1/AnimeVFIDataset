@@ -30,9 +30,12 @@
 
 # 预览
 
-![im0](https://user-images.githubusercontent.com/68835291/112312240-8d3c4680-8ce1-11eb-8ef3-44df030074e4.png)
-![im1](https://user-images.githubusercontent.com/68835291/112312247-8f9ea080-8ce1-11eb-91d9-b0eb16a3d817.png)
-![im2](https://user-images.githubusercontent.com/68835291/112312253-91686400-8ce1-11eb-8eb9-19cad3ee9cff.png)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/68835291/112470075-30a25f80-8da5-11eb-8205-efcd30d10a9c.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/68835291/112470102-3730d700-8da5-11eb-92e1-ee250ea3a669.gif)
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/68835291/112470108-3a2bc780-8da5-11eb-810c-ff07286c469e.gif)
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/68835291/112470150-46b02000-8da5-11eb-80bc-9a06014253bb.gif)
+
+
 
 
 
