@@ -1,5 +1,7 @@
 # dataset.py 用法
 
+--mode 1/2 模式1/2
+
 --video 视频/图片序列路径
 
 --cache_dir 用于存放视频帧的缓存路径
