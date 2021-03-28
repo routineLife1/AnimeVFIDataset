@@ -12,7 +12,7 @@ parser.add_argument('--video', dest='video', type=str, required=True,help='视�
 parser.add_argument('--cache_dir', dest='cache_dir', type=str, required=True,help='存放缓存的目录')
 parser.add_argument('--dataset', dest='dataset', type=str, required=True,help='存放数据的目录')
 parser.add_argument('--scale', dest='scale', type=str, default='480x270',help='缩放')
-parser.add_argument('--fps', dest='fps', type=int, default=8,help='对动漫进行掉帧处理（尽可能一拍一）')
+parser.add_argument('--fps', dest='fps', type=int, default=12,help='对动漫进行掉帧处理（尽可能一拍一）')
 parser.add_argument('--start',dest='start',type=int,default=0,help='从start开始创建目录，0为自动')
 parser.add_argument('--pos',dest='pos',type=int,default=8,help='选出一组后往后推pos帧后继续选择（减少重复场景）')
 parser.add_argument('--err', dest='err', type=float, default=2,help='容错，越低运动越均匀')
