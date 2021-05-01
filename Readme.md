@@ -43,7 +43,7 @@
 
 # 已准备好的数据集
 
-### ANIME-3K
+### ANIME-3K （dataset v2）
 
 链接：https://pan.baidu.com/s/1e7aHuoUyHHAhQoohD5WgEg 
 提取码：kq9v
