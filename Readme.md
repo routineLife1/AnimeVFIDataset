@@ -43,10 +43,7 @@
 
 # 已准备好的数据集
 
-  每3帧一小组(im0,im1(gt),im2)
+### ANIME-3K
 
-  从NCOP中提取出1052小组
-  
-  从NCED中提取出681小组
-  
-  ### 下载链接:https://drive.google.com/file/d/1vSTfXU-JTfc4SVkzEJ17DdBBcRCHSS4E
+链接：https://pan.baidu.com/s/1e7aHuoUyHHAhQoohD5WgEg 
+提取码：kq9v
