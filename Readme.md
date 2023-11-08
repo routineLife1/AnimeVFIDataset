@@ -36,14 +36,3 @@
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/68835291/112470102-3730d700-8da5-11eb-92e1-ee250ea3a669.gif)
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/68835291/112470108-3a2bc780-8da5-11eb-810c-ff07286c469e.gif)
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/68835291/112470150-46b02000-8da5-11eb-80bc-9a06014253bb.gif)
-
-
-
-
-
-# 已准备好的数据集
-
-### ANIME-3K （dataset v2）
-
-链接：https://pan.baidu.com/s/1e7aHuoUyHHAhQoohD5WgEg 
-提取码：kq9v
